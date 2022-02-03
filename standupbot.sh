@@ -9,7 +9,7 @@
 # This script is NOT an attempt to "game the system", in fact I run it manually
 # and make sure the info is accurate.
 # I also check in on what other people are working on too (that's part of a good
-# standup, so its not passive at all, and mostly for a bit of useful fun.
+# standup), so its not passive at all, and mostly for a bit of useful fun.
 #
 # Fair warning:
 #  This script plays it "fast and loose" in regards to JSON serialization.
