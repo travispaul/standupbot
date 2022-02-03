@@ -176,8 +176,7 @@ playing_now="\n:lastfm: _*Currently Playing:* $(get_playing)_"
 message="${message}${playing_now}\n"
 
 if [ "$1" != "test" ]; then
-  #send_slack "$message"
-  echo send
+  send_slack "$message"
 else
   echo -e "$message"
 fi
