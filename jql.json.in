@@ -1,0 +1,1 @@
+{"jql":"assignee = __USER_ID__ and status in ('In Progress', 'Peer Review', 'Dev Testing', 'To Do') order by priority","startAt":0,"maxResults":8,"fields":["id","key", "summary"]}
