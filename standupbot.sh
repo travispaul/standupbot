@@ -85,9 +85,10 @@ get_reviews() {
 
 get_playing() {
   local track="$(curl -s "http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=$LASTFM_USER&api_key=$LASTFM_KEY&limit=1&format=json" | jq '.recenttracks.track[0]')"
+  local url=$(echo "$track" | jq -r '.url')
   local artist=$(echo "$track" | jq -r '.artist["#text"]')
   local name=$(echo "$track" | jq -r '.name')
-  echo "$name by $artist"
+  echo "<$url|$name by $artist>"
 }
 
 send_slack() {
@@ -171,7 +172,7 @@ for i in $(get_in_flight); do
     message="$message:jira: $id - $summary\n"
 done
 
-playing_now="\n:lastfm: _*Currently Playing:* $(get_playing)_"
+playing_now="\n:lastfm: *Currently Playing:* $(get_playing)"
 
 message="${message}${playing_now}\n"
 
